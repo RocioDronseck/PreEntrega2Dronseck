@@ -8,7 +8,7 @@ header nav {
     width: 100%;
     background-color: #1C3879;
     display: flex;
-    flex-direction:row;
+    flex-direction: row;
     align-items: center;
     justify-content: center;
     height: auto;
@@ -32,7 +32,9 @@ header img {
     gap: 5px;
     float: right;
     margin: 0%;
-    
+
+
+
 
 }
 
@@ -44,8 +46,8 @@ header img {
     background-color: #607eaa;
     font-size: 18px;
     padding: 3px 3px;
-   
-   
+
+
 
 }
 
@@ -82,21 +84,43 @@ h1 {
     width: 100%;
 }
 
-@media (max-width:768px) {
+@media (max-width:767px) {
     h1 {
         text-align: center;
     }
 
 }
 
+.scale-in-hor-center {
+    animation: scale-in-hor-center 1.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+
+@keyframes scale-in-hor-center {
+    0% {
+        -webkit-transform: scaleX(0);
+        transform: scaleX(0);
+        opacity: 1;
+    }
+
+    100% {
+        -webkit-transform: scaleX(1);
+        transform: scaleX(1);
+        opacity: 1;
+    }
+}
+
+
 .imagenPcpal {
     width: 100%;
     border-radius: 10px;
 }
 
+
+
 #servicios {
     display: flex;
     gap: 5px;
+    margin-top: 50px;
 }
 
 #servicios div {
@@ -104,6 +128,7 @@ h1 {
     flex-direction: column;
     width: 100%;
     margin: 5px;
+    margin-bottom: 55px;
     padding: 3px;
     border: 2px solid #607eaa;
 }
@@ -143,14 +168,48 @@ main a {
 
 }
 
-@media (max-width:768px) {
+.slide-top:hover {
+	        animation: slide-top 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+
+}
+
+@keyframes slide-top {
+    0% {
+      -webkit-transform: translateY(0);
+              transform: translateY(0);
+    }
+    100% {
+      -webkit-transform: translateY(-50px);
+              transform: translateY(-50px);
+    }
+  }
+  
+
+@media (max-width:767px) {
     #servicios {
         display: inline;
+        margin: 60px;
     }
 
 }
 
 
+.roll-in-left {
+	        animation: roll-in-left 2s ease-out both;
+}
+
+@keyframes roll-in-left {
+    0% {
+      -webkit-transform: translateX(-800px) rotate(-540deg);
+              transform: translateX(-800px) rotate(-540deg);
+      opacity: 0;
+    }
+    100% {
+      -webkit-transform: translateX(0) rotate(0deg);
+              transform: translateX(0) rotate(0deg);
+      opacity: 1;
+    }
+  }
 .pie-pagina {
     width: 100%;
     background-color: #1C3879;
@@ -180,7 +239,7 @@ main a {
 }
 
 .pie-pagina .grupo-1 .box h2 {
-    color: #eae3d2;
+    color: #f9f5eb;
     margin-bottom: 5px;
     font-size: 15px;
     text-align: left;
@@ -189,7 +248,7 @@ main a {
 }
 
 .pie-pagina .grupo-1 .box p {
-    color: #eae3d2;
+    color: #f9f5eb;
     margin-bottom: 10px;
     font-family: Arial, Helvetica, sans-serif;
 }
@@ -200,7 +259,7 @@ main a {
     width: 45px;
     height: 45px;
     line-height: 45px;
-    color: #eae3d2;
+    color: #f9f5eb;
     margin-right: 10px;
     background-color: #607eaa;
     text-align: center;
@@ -215,7 +274,7 @@ main a {
     background-color: #607eaa;
     padding: 15px 10px;
     text-align: center;
-    color: #eae3d2;
+    color: #f9f5eb;
 
 }
 
@@ -223,7 +282,7 @@ main a {
     font-size: 15px;
 }
 
-@media screen and (max-width:768px) {
+@media (max-width:767px) {
     .pie-pagina .grupo-1 {
         width: 90%;
         grid-template-columns: repeat(1, 1fr);
@@ -249,7 +308,7 @@ main a {
     flex: auto;
 }
 
-@media (max-width:768px) {
+@media (max-width:767px) {
     #conteiner {
         display: inline;
 
@@ -257,6 +316,27 @@ main a {
     }
 
 }
+
+.tracking-in-expand-fwd {
+	
+	        animation: tracking-in-expand-fwd 0.8s cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
+}
+@keyframes tracking-in-expand-fwd {
+    0% {
+      letter-spacing: -0.5em;
+      -webkit-transform: translateZ(-700px);
+              transform: translateZ(-700px);
+      opacity: 0;
+    }
+    40% {
+      opacity: 0.6;
+    }
+    100% {
+      -webkit-transform: translateZ(0);
+              transform: translateZ(0);
+      opacity: 1;
+    }
+  }
 
 .formulario {
     margin: 15px;
@@ -290,21 +370,22 @@ form label {
     font-size: 18px;
 }
 
-@media (max-width:768px) {
+@media (max-width:767px) {
     .formulario {
         justify-content: center;
         align-items: center;
 
 
 
-    }}
-
-    .listaDestino .Prov {
-        font-size: 20px;
     }
+}
 
-    .listaDestino {
-        font-size: 15px;
-        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-        color: #1C3879;
-    }
+.listaDestino .Prov {
+    font-size: 20px;
+}
+
+.listaDestino {
+    font-size: 15px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: #1C3879;
+}
